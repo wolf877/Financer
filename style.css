@@ -1,0 +1,292 @@
+/* selecionar tudo */
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+  /* end */
+  
+  body{
+    background: #f0f2f5;
+    font-family: "Odibee Sans", sans-serif;
+  }
+  
+  .conteiner{
+    width: min(90vw, 800px);
+    margin:auto;
+  }
+  
+  h2{
+    margin-top: 3.2em;
+    margin-bottom: 0.8em;
+    color: #363f5f;
+    font-weight: normal;
+  }
+  /* header */
+  header{
+    background: #2D4A22;
+    padding: 2em 0 10em;
+    text-align:center;
+  }
+  
+  header h1{
+    color: #fff;
+    font-weight:100;
+  }
+  
+  #carteira{
+    margin-top: -6em;
+  }
+  
+  #carteira h2{
+    color: white;
+    margin-top: 0;
+  }
+  
+  .card{
+    background-color:white;
+    padding: 0.5em 2em;
+    border-radius:12pt;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    margin-bottom:2em;
+  }
+  
+  .card h3{
+    font-size: 1rem;
+    font-weight: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .card p{ 
+    margin-top: 1rem;
+    font-size: 1.5rem;
+  }
+  
+  .card.saldo{
+    background-color: #49aa26;
+    margin-right:5pt;
+  }
+  
+  a{
+    color: #49aa26;
+    text-decoration: none;
+  }
+  
+  a:hover{
+    color:#3dd705;
+  }
+  
+  .button.new{
+    display: inline-block
+    /*margin-bottom:0.8rem;*/
+  }
+  
+  .mov{
+    display: block;
+    overflow-x:auto;
+  }
+  #tables{
+    width:100%;
+    border-spacing:0 0.5rem;
+    
+  }
+  
+  table td{
+    background: white;
+  }
+  
+  table th{
+    background-color:#A0F7A0;
+    opacity: 1;
+    font-weight: normal;
+    padding: 1rem 2rem;
+    text-align: left;
+    
+  }
+  
+  table tbody tr{
+    opacity: 0.7;
+  }
+  table td{
+    background: white;
+    padding: 1rem 2rem;
+    margin-bottom:50px;
+    text-align: left;
+  }
+  table tbody tr:hover{
+    opacity: 1;
+  }
+  table thead tr th:first-child{
+    border-radius: 0.8rem 0 0 0.8rem;
+  }
+  table tbody tr td:first-child{
+    border-radius: 0.8rem 0 0 0.8rem;
+  }
+  
+  table thead tr th:last-child{
+    border-radius: 0 0.8em 0.8rem 0;
+  }
+  table tbody tr td:last-child{
+    border-radius: 0 0.8em 0.8rem 0;
+  }
+  
+  .expense{
+    color: red;
+  }
+  
+  .income{
+    color:green;
+  }
+  
+  .only{
+    position: absolute;
+    width: 1;
+    height: 1px;
+    padding:0;
+    margin:-1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0)
+  }
+  footer{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    text-align:center;
+    padding:1.4rem;
+    background-color: green;
+  }
+  
+  .overlay{
+    width: 100%;
+    height: 100%;
+    
+    background-color: rgba(0, 0, 0, 0.7);
+    
+    position: fixed;
+    top: 0;
+    
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    
+    opacity:0;
+    visibility: hidden;
+    
+    z-index:999;
+  }
+  
+  .overlay.active{
+    opacity:1;
+    visibility: visible;
+  }
+  
+  .box{
+    background-color:#F0F2F5;
+    padding: 2.4rem;
+    width:90%;
+    max-width: 500px;
+    border-radius: 0.5rem;
+    position: relative;
+    z-index:5;
+  }
+  
+  /*form*/
+  #form{
+    max-width:500px;
+  }
+  
+  #form h2{
+    margin-top:0;
+  }
+  
+  input{
+    border:none;
+    border-radius:0.5rem;
+    padding: 0.5rem;
+    
+    width: 100%
+  }
+  
+  .input-group{
+    margin-top: 0.8rem;
+  }
+  
+  .input-group small{
+    opacity: 0.4;
+    font-family: "Helvica", Sans-Serif;
+  }
+  
+  .actions{
+    font-family: "Helvica", Sans-Serif;
+    margin-top: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .actions .cancel, .actions button{
+    width:48%;
+  }
+  
+  button{
+    width: 100%;
+    height: 30px;
+    border:none;
+    background-color: #49aa26;
+    color: white;
+    border-radius: 1rem;
+    
+    cursor: pointer;
+  }
+  
+  button:hover{
+    background-color: #3dd705;
+  }
+  
+  .menos{
+    cursor: pointer;
+  }
+  .actions .cancel{
+    color:#e92929;
+    border: 2px #e92929 solid;
+    border-radius: 1rem;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    opacity:0.6;
+  }
+  
+  .actions .cancel:hover{
+    opacity:1;
+  }
+  
+  .red{
+    color: #FE0006;
+  }
+  
+  @media (min-width: 720px){
+    html{
+      font-size: 120%;
+    }
+    
+    .balance{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1.5fr;
+      margin-top: 3rem;
+      gap: 0.5rem;
+    }
+    
+    #tables{
+      padding-left: 40pt;
+      padding-right: 40pt;
+      width:100%;
+      border-spacing:0 0.5rem;
+    }
+    
+    
+  }
