@@ -99,14 +99,14 @@ let total = 0
 //  }
 // })
 total = Valor.incomes() - Valor.expenses()
-if(total<0){
-  document
-    .querySelector('#cartsaldo')
-    .classList.add('red')
-  document
-  .querySelector(".saldo").style.backgroundColor = "#820003";
-}
-return total
+  if(total<0){
+    document
+     // .querySelector('#cartsaldo')
+     // .classList.add('red')
+    document
+      .querySelector(".saldo").style.backgroundColor = "#820003";
+  }
+  return total
 }
 }
 
@@ -114,7 +114,7 @@ const utils ={
 formatvalues(value){
 value = Number(value)*100
 //console.log(value)
-return value
+return Math.round(value)
 },
 
 formatdate(date){

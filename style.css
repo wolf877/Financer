@@ -44,6 +44,10 @@
     margin-top: 0;
   }
   
+  #cartentradas, #cartsaida, #cartsaldo{
+    font-family: "Helvica", Sans-Serif;
+  }
+
   .card{
     background-color:white;
     padding: 0.5em 2em;
@@ -81,8 +85,9 @@
   }
   
   .button.new{
-    display: inline-block
-    /*margin-bottom:0.8rem;*/
+    display: inline-block;
+    margin-bottom:0.6rem;
+    margin-left: 3rem;
   }
   
   .mov{
@@ -249,7 +254,13 @@
   
   .menos{
     cursor: pointer;
+    opacity: 0.6;
   }
+
+  .menos:hover{
+    opacity: 1;
+  }
+
   .actions .cancel{
     color:#e92929;
     border: 2px #e92929 solid;
