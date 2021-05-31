@@ -21,7 +21,7 @@
 
     <!-- Import the webpage's stylesheet -->
     <link rel="stylesheet" href="style.css" />
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     
   </head>
     
@@ -145,9 +145,16 @@
         </tbody> 
       
       </table>
-      </div>
-    </main>
+
+    </div>
     
+        <div class="graphs">
+            <canvas id="expensesGraphs"></canvas>
+            <canvas id="incomesGraphs"></canvas>
+      </div>
+ 
+    </main>
+
     <footer>
       <p>
         Financer
