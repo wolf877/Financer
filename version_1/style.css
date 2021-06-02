@@ -207,6 +207,22 @@
     width: 100%;
     max-width: 600px;
   }
+
+  #incomesGraphs{
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .graphs{
+    width: 75%;
+    /*font-size: 1rem;*/
+    margin-left: 10%;
+    font-weight: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
   /*form*/
   #form{
     max-width:500px;

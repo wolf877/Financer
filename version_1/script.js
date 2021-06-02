@@ -99,13 +99,7 @@ let total = 0
 //  }
 // })
 total = Valor.incomes() - Valor.expenses()
-if(total<0){
-  document
-   // .querySelector('#cartsaldo')
-   // .classList.add('red')
-  document
-    .querySelector(".saldo").style.backgroundColor = "#820003";
-}
+
 return total
 }
 }
@@ -176,6 +170,13 @@ document
 document
 .getElementById('cartsaldo')
 .innerHTML = utils.Format(Valor.total())
+if(Valor.total()<0){
+  //document
+   // .querySelector('#cartsaldo')
+   // .classList.add('red')
+  document
+    .querySelector(".saldo").style.backgroundColor = "#820003";
+}
 },
 
 Clearall(){
