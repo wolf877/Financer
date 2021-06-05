@@ -199,29 +199,9 @@
     z-index:5;
   }
   /*  graphs */
- .graphs{
-   margin-bottom: 1rem;
- }
-
-  #expensesGraphs{
-    width: 100%;
-    max-width: 600px;
-  }
-
-  #incomesGraphs{
-    width: 100%;
-    max-width: 600px;
-  }
-
-  .graphs{
-    width: 75%;
-    /*font-size: 1rem;*/
-    margin-left: 10%;
-    font-weight: 100;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+  
+  
+  
 
   /*form*/
   #form{
@@ -323,5 +303,25 @@
       border-spacing:0 0.5rem;
     }
     
+    .graphs{
+
+      width: 75%;
+      /*font-size: 3rem;*/
+      margin-top: 1rem;
+      margin-left: 10%;
+      margin-bottom: 1rem;
+      font-weight: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  
+    .testegraph{
+          width: 50%;
+    }
+  
+    .testegraph h4{
+      padding-left: 24pt;
+    }
     
   }

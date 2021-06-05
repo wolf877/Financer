@@ -170,6 +170,7 @@ document
 document
 .getElementById('cartsaldo')
 .innerHTML = utils.Format(Valor.total())
+//console.log(5.5)
 if(Valor.total()<0){
   //document
    // .querySelector('#cartsaldo')
@@ -186,11 +187,11 @@ DOM.transcont.innerHTML =""
 }
 
 const needs = {
-   RandomColor(){
+   RandomColor(ArrayColors){
     let colors = []
     let letters = '0123456789ABCDEF'
     let color = '#'
-    Valor.all.forEach(function(){
+    ArrayColors.forEach(function(){
       for (var i = 0; i < 6; i++) {
         color += letters[Math.floor(Math.random() * 16)];
       }
@@ -214,7 +215,7 @@ const needs = {
     })
     return {xExpenses, xIncomes}
   },
-
+  
   arguments(){
     let yIncomes = []
     let yExpenses = []
@@ -229,13 +230,24 @@ const needs = {
     })
     return {yIncomes, yExpenses}
   },
+
+  sum(ArraySum){
+    let sum = 0
+    ArraySum.forEach(function(transaction, index){
+      sum =  sum + ArraySum[index]
+    })
+    return sum    
+  },
+
 }
+
+
 
 const graphs = {
   expensesGraphs(){
     var xValues = needs.labels().xExpenses
     var yValues = needs.arguments().yExpenses
-    var barColors = needs.RandomColor();
+    var barColors = needs.RandomColor(yValues)
 
   new Chart("expensesGraphs", {
     type: "doughnut",
@@ -249,7 +261,15 @@ const graphs = {
     options: {
       title: {
         display: false,
-        text: "World Wide Wine Production 2018"
+        text: "Seus gastos"
+      },
+      tooltips: {
+        callbacks: {
+          label: function(tooltipItem, data) {
+            let percent = (data['datasets'][0]['data'][tooltipItem['index']]*100/needs.sum(yValues)).toFixed(2)
+            return data['labels'][tooltipItem['index']] + ': ' + percent + '%';
+          }
+        }
       }
     }
   });
@@ -259,22 +279,33 @@ const graphs = {
   incomesGraphs(){
     var xValues = needs.labels().xIncomes
     var yValues = needs.arguments().yIncomes
-    var barColors = needs.RandomColor();
+    var barColors = needs.RandomColor(yValues)
+    
+    //console.log(barColors)
 
   new Chart("incomesGraphs", {
     type: "doughnut",
     data: {
       labels: xValues,
       datasets: [{
+        data: yValues,
         backgroundColor: barColors,
-        data: yValues
       }]
     },
     options: {
       title: {
         display: false,
-        text: "World Wide Wine Production 2018"
+        text: "Seus ganhos"
+      },
+      tooltips: {
+        callbacks: {
+          label: function(tooltipItem, data) {
+            let percent = (data['datasets'][0]['data'][tooltipItem['index']]*100/needs.sum(yValues)).toFixed(2)
+            return data['labels'][tooltipItem['index']] + ': ' + percent + '%';
+          }
+        }
       }
+      
     }
   });
 
@@ -384,7 +415,8 @@ console.log(needs.labels().xIncomes)
 console.log(needs.arguments().yIncomes)
 console.log(needs.arguments().yExpenses)
 
-//console.log(xIncomes)
+console.log(needs.arguments().yIncomes)
+console.log(needs.RandomColor(needs.arguments().yExpenses))
 //console.log(xExpenses)
 
 //console.log(yIncomes)

@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     
+   
   </head>
     
   <!--https://cdn.glitch.com/e01deed2-59fb-427d-8af9-049919f52b5f%2Flogo.svg?v=1622141186584-->
@@ -148,9 +149,17 @@
 
     </div>
     
-        <div class="graphs">
-            <canvas id="expensesGraphs"></canvas>
-            <canvas id="incomesGraphs"></canvas>
+        <div class="graphs">       
+            <div class="testegraph">
+              <h4>Entradas</h4>
+                <canvas id="incomesGraphs" width="480" height="320"></canvas>      
+            </div>
+            <div class="testegraph">
+              <h4>Saídas</h4>
+              <canvas id="expensesGraphs" width="480" height="320"></canvas>
+            </div>
+            
+            
       </div>
  
     </main>
